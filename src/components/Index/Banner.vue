@@ -14,7 +14,7 @@
             class="bg-indigo-800 py-2 px-6 rounded-lg text-lg text-white hover:bg-indigo-500">
             Descubrir más
           </a>
-          <a href="#contactanos"
+          <a href="#contacto"
             class="border-2 py-2 px-6 rounded-lg text-lg text-white hover:border-indigo-500  hover:text-indigo-500">
             Contáctanos
           </a>
