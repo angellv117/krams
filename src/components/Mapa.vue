@@ -23,14 +23,19 @@
       },
       height: {
         type: [Number, String],
-        default: 450
+        default: '100%'
+      },
+      longitude: {
+        type: [Number, String],
+        default: '-100.1477504'
+      },
+      latitude: {
+        type: [Number, String],
+        default: '20.5035264'
       }
     },
     data() {
       return {
-        // Coordenadas específicas de Tienda Krams
-        latitude: '20.5035264',
-        longitude: '-100.1477504'
       }
     },
     computed: {

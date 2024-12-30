@@ -1,10 +1,13 @@
 <template>
   <!-- Banner -->
   <Banner />
+
   <!-- Servicios -->
   <Servicios />
   <!-- Youtube -->
   <Youtube />
+  <!-- Ubicacion -->
+  <!-- <Ubicacion /> -->
   <!-- Marcas -->
   <Marcas />
 </template>
@@ -14,13 +17,15 @@ import Banner from '@/components/Index/Banner.vue';
 import Servicios from '@/components/Index/Servicios.vue';
 import Youtube from '@/components/Index/Youtube.vue';
 import Marcas from '@/components/Index/Marcas.vue';
+import Ubicacion from '@/components/Index/Ubicacion.vue';
 export default {
   name: 'ThreeModel',
   components: {
     Banner,
     Servicios,
     Youtube,
-    Marcas
+    Marcas,
+    Ubicacion
   },
   data() {
     return {

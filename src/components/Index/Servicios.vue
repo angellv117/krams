@@ -7,14 +7,18 @@
         <p class="text-center text-lg">
             Conoce todo lo que podemos ofrecerte con nuestras herramientas y servicios de última generación.
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
-            <Card data-aos="fade-right" v-for="servicio in servicios" :key="servicio.id" :title="servicio.nombre" :description="servicio.descripcion" :image="servicio.imagen" />
+        <div class="flex justify-center items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                <Card data-aos="fade-right" v-for="servicio in servicios" :key="servicio.id" :title="servicio.nombre"
+                    :description="servicio.descripcion" :image="servicio.imagen" />
+            </div>
         </div>
+
     </div>
 </template>
 
 <script>
-import Model3D from '@/components/Model3D.vue'; 
+import Model3D from '@/components/Model3D.vue';
 import Card from '@/components/Card.vue';
 export default {
     name: 'Servicios',

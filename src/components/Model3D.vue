@@ -101,9 +101,7 @@ export default {
         },
         (xhr) => {
           if (xhr.total > 0) {
-            console.log(`Modelo cargado: ${(xhr.loaded / xhr.total) * 100}%`)
           } else {
-            console.log(`Bytes cargados: ${xhr.loaded}`)
           }
         },
         (error) => {

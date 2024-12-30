@@ -5,8 +5,6 @@ import store from './store';
 import './assets/tailwind.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import VuePlyr from 'vue-plyr';
-import 'vue-plyr/dist/vue-plyr.css';
 
 // Importar Font Awesome CSS
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -21,9 +19,7 @@ router.beforeEach((to, from, next) => {
 });
 
 // Configurar AOS después de montar la app
-app.use(store).use(router).use(VuePlyr, {
-  plyr: {}
-}).mount('#app');
+app.use(store).use(router).mount('#app');
 
 // Inicializar AOS
 AOS.init({
