@@ -5,6 +5,9 @@ import store from './store';
 import './assets/tailwind.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import './assets/css/dataTables.dataTables.min.css';
+import './assets/js/dataTables.min';
+
 
 // Importar Font Awesome CSS
 import '@fortawesome/fontawesome-free/css/all.css';

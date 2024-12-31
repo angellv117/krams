@@ -67,6 +67,9 @@ export default {
         if (this.imageClass === "product-image") {
             this.classImage = "p-8 rounded-t-lg w-full h-64 object-cover"
         }
+        if (this.imageClass === "service-image") {
+            this.classImage = "p-8 rounded-t-lg max-w-full object-cover"
+        }
     }
 }
 </script>

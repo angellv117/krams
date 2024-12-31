@@ -1,5 +1,5 @@
 <template>
-<div class="bg-white text-gray-800 m-4 py-10 text-center" id="servicios" data-aos="fade-up">
+<div class="bg-white  min-h-screen text-gray-800 m-4 py-10 text-center" id="servicios" data-aos="fade-up">
     <h1 class="text-4xl md:text-5xl font-bold leading-tight">
         <span class="text-indigo-800 uppercase tracking-widest">Productos</span>
     </h1>

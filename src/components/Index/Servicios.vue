@@ -10,7 +10,7 @@
         <div class="flex justify-center items-center">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
                 <Card data-aos="fade-right" v-for="servicio in servicios" :key="servicio.id" :title="servicio.nombre"
-                    :description="servicio.descripcion" :image="servicio.imagen" />
+                    :description="servicio.descripcion" :image="servicio.imagen" :imageClass="`service-image`" />
             </div>
         </div>
 
