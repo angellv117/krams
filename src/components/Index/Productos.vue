@@ -1,6 +1,6 @@
 <template>
-    <div class=" bg-white flex flex-col items-center justify-center" data-aos="fade-up">
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+    <div class=" flex flex-col md:flex-row md:justify-center md:items-center" data-aos="fade-up">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight text-center">
         <span class="text-indigo-800 uppercase tracking-widest">Productos recientes </span>
       </h1>
       
