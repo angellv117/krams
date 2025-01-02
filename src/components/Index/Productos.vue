@@ -1,5 +1,5 @@
 <template>
-    <div class=" min-h-screen bg-white flex flex-col items-center justify-center" data-aos="fade-up">
+    <div class=" bg-white flex flex-col items-center justify-center" data-aos="fade-up">
       <h1 class="text-4xl md:text-5xl font-bold leading-tight">
         <span class="text-indigo-800 uppercase tracking-widest">Productos</span>
       </h1>
