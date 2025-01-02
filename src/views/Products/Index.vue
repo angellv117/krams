@@ -8,7 +8,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
                 <Card data-aos="fade-right" v-for="producto in productos" :key="producto.id" :title="producto.nombre"
                     :buttonText="`Ver`" :imageClass="`product-image`" :price="producto.precio"
-                    :image="producto.imagen" />
+                    :image="serverUrl + '/' + producto.imagen" />
             </div>
 
         </div>
@@ -19,7 +19,6 @@
 
 <script>
 
-import productos from '@/assets/productos.json';
 import Card from '@/components/Card.vue';
 import Modal from '@/components/Modal.vue';
 export default {
@@ -35,8 +34,7 @@ export default {
         };
     },
     mounted() {
-        this.productos = productos.productos;
-        //this.fetchProductos();
+        this.fetchProductos();
     },
     methods: {
         openModal(producto) {

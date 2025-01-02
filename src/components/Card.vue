@@ -1,5 +1,5 @@
 <template>
-<div class="w-full my-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="w-full my-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:scale-105 transition-all duration-300">
     <a>
         <img :class="classImage" :src="image" alt="product image" />
     </a>

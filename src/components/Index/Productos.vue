@@ -1,7 +1,7 @@
 <template>
     <div class=" bg-white flex flex-col items-center justify-center" data-aos="fade-up">
       <h1 class="text-4xl md:text-5xl font-bold leading-tight">
-        <span class="text-indigo-800 uppercase tracking-widest">Productos</span>
+        <span class="text-indigo-800 uppercase tracking-widest">Productos recientes </span>
       </h1>
       
       <div class="w-full max-w-6xl px-4 mt-2">
@@ -13,13 +13,14 @@
           :breakpoints="breakpoints"
         >
           <Slide v-for="producto in productos" :key="producto.id" >
+
             <div class="carousel__item px-2">
               <Card
                 :title="producto.nombre"
                 :buttonText="`Ver`"
                 :imageClass="`product-image`"
                 :price="producto.precio"
-                :image="producto.imagen"
+                :image="serverUrl + '/' + producto.imagen"
               />
             </div>
           </Slide>
@@ -36,7 +37,6 @@
   <script>
   import 'vue3-carousel/dist/carousel.css';
   import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-  import productos from '@/assets/productos.json';
   import Card from '@/components/Card.vue';
   
   export default {
@@ -49,7 +49,8 @@
     },
     data() {
       return {
-        productos: productos.productos,
+        productos: [],
+        serverUrl: process.env.VUE_APP_API_URL,
         breakpoints: {
           320: {
             itemsToShow: 1,
@@ -69,6 +70,10 @@
           },
         },
       };
+    },
+    async mounted() {
+      this.productos = await this.$store.dispatch('getFirst8');
+      this.productos = this.$store.getters['getProductos'];
     },
   };
   </script>

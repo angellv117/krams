@@ -49,6 +49,17 @@ export default {
             }
         },
 
+        async getFirst8({ commit }) {
+            try {
+                const response = await axios.get('/producto/first8', {
+
+                })
+                commit('setProductos', response.data) // Guarda la lista de productos en el estado.
+            } catch (error) {
+                console.log(error)
+            }
+        },
+
         // Acción para agregar un producto.
         async addProducto({ commit }, payload) {
             try {
