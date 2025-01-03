@@ -36,7 +36,7 @@ export default {
               title: 'Producto subido con éxito',
               icon: 'success'
             });
-            this.$router.push('/productos');
+            this.$router.push('/adminPanel');
           } else {
             swal.fire({
               title: 'Error al subir el producto',

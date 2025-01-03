@@ -8,7 +8,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
                 <Card data-aos="fade-right" v-for="producto in productos" :key="producto.id" :title="producto.nombre"
                     :buttonText="`Ver`" :imageClass="`product-image`" :price="producto.precio"
-                    :image="serverUrl + '/' + producto.imagen" />
+                    :image="serverUrl + '/' + producto.imagen" :id="producto.id" />
             </div>
 
         </div>

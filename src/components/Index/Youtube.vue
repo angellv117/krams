@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col md:flex-row md:justify-center md:items-center">
+    <div class="flex flex-col md:flex-row md:justify-center md:items-center my-10">
       <!-- Contenido existente -->
       <div class="md:basis-1/3 flex flex-col justify-center items-center text-center px-6 py-10" data-aos="fade-down">
         <h1 class="text-4xl md:text-5xl font-bold leading-tight">

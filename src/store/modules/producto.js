@@ -80,12 +80,11 @@ export default {
         // Acción para obtener un producto específico por ID.
         async getProducto({ commit }, payload) {
             try {
-                const response = await axios.get(`/producto/${payload.productoId}`, {
-                    headers: {
-                        'Authorization': CryptoJS.AES.decrypt(localStorage.getItem('jwt'), secretKey).toString(CryptoJS.enc.Utf8) // Envía el JWT en los headers para autenticación.
-                    }
+                const response = await axios.get(`/producto/${payload.id}`, {
                 })
-                commit('setProducto', response.data) // Guarda el producto seleccionado en el estado.
+                if (response.status == 200 || response.status == 201) { 
+                    commit('setProducto', response.data) // Guarda el producto seleccionado en el estado.
+                }
             } catch (error) {
                 console.log(error)
             }
@@ -95,12 +94,17 @@ export default {
         // Acción para eliminar un producto por ID.
         async deleteProducto({ commit }, payload) {
             try {
-                await axios.delete(`/producto/${payload.productoId}`, {
+                const response = await axios.delete(`/producto/${payload.productoId}`, {
                     headers: {
                         'Authorization': CryptoJS.AES.decrypt(localStorage.getItem('jwt'), secretKey).toString(CryptoJS.enc.Utf8) // Envía el JWT en los headers para autenticación.
                     }
                 })
-                console.log("Producto eliminado") // Log de confirmación de eliminación.
+                if (response.status == 200 || response.status == 201) {
+                    commit('setStatus', true)
+                }
+                else if (response.status == 401) {
+                    commit('setStatus', false)
+                }
             } catch (error) {
                 console.log(error)
             }
@@ -109,15 +113,15 @@ export default {
         // Acción para actualizar los datos de un producto.
         async updateProducto({ commit }, payload) {
             try {
-                const response = await axios.patch(`/producto/${payload.productoId}`, {
-                    name: payload.name,
-                    role: payload.role
-                }, {
+                const response = await axios.patch(`/producto/${payload.productoId}`, payload.product, {
                     headers: {
                         'Authorization': CryptoJS.AES.decrypt(localStorage.getItem('jwt'), secretKey).toString(CryptoJS.enc.Utf8) // Envía el JWT en los headers para autenticación.
                     }
                 })
-                commit('setSelectUser', response.data) // Actualiza el estado con los datos del usuario modificado.
+                console.log(response.status)
+                if (response.status == 200 || response.status == 201) {
+                    commit('setStatus', true)
+                }
             } catch (error) {
                 console.log(error)
             }
